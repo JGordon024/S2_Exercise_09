@@ -59,7 +59,7 @@
                 <legend>Customer Information</legend>
                 <div class="formRow">
                     <label for="name">Name*</label>
-                    <input name="custName" id="name" type="text" placeholder="first and last name" />
+                    <input name="custName" id="name" type="text" placeholder="first and last name" required />
                 </div>
                 <div class="formRow">
                     <label for="street">Street address</label>
@@ -73,15 +73,15 @@
                 </div>
                 <div class="formRow">
                     <label for="zip">Postal Code</label>
-                    <input name="custZip" id="zip" type="text" placeholder="nnnn (-nnnn)" />
+                    <input name="custZip" id="zip" type="text" placeholder="nnnnn (-nnnn)" pattern="^\d{5}(-\d{4})?$" />
                 </div>
                 <div class="formRow">
                     <label for="phone">Phone Number</label>
-                    <input name="custPhone" id="phone" type="tel" placeholder="(nnn) nnn-nnnn" />
+                    <input name="custPhone" id="phone" type="tel" placeholder="(nnn) nnn-nnnn" pattern="^\d{10}$|^(\(\d{3}\)\s*)" />
                 </div>
                 <div class="formRow">
                     <label for="email">E-mail*</label>
-                    <input name="custEmail" id="mail" type="email" />
+                    <input name="custEmail" id="mail" type="email" required />
                 </div>
                 <div class="formRow">
                     <label for="info">Where did you hear about us? </br> (select all that applies)</label>
@@ -108,7 +108,7 @@
                 </div>
                 <div class="formRow">
                     <label for="DineSpin">How many times do you dine in monthly? </label>
-                    <input name="DineOut" id="dinespin" type="number" value="1" step="1" min="0" max="20">
+                    <input name="DineOut" id="dineSpin" type="number" value="1" step="1" min="0" max="20">
                 </div>
                 <input name="mailMe" id="mailCB" value="yes" type="checkbox" />
                 <label for="mailCB">Add me to your mailing list for great coupons and specials!</label>
@@ -177,12 +177,16 @@
                     <label for="rangeBox">Rate the overall service <br />
                         (0=poor; 10=great)</label>
                     0
-                    <input for="serviceRate" id="rangeBox" type="range" value="5" min="0" max="10">
+                    <input name="serviceRate" id="rangeBox" type="range" value="5" min="0" max="10">
                     10
                 </div>
                 <label for="commBox">Tell us more about experience</label>
                 <textarea name="custExp" id="CommBox"></textarea>
             </fieldset>
+            <div id="buttons">
+                <input type="submit" value="Submit My Survey" />
+                <input type="reset" value="Cancel">
+            </div>
         </form>
 
 
